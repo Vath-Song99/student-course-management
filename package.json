@@ -1,0 +1,14 @@
+{
+  "name": "student-course-management",
+  "private": "true",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "install": "yarn install --frozen-lockfile"
+  }
+ }

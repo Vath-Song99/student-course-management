@@ -1,0 +1,13 @@
+
+{
+  "name": "@wanago.io/logger",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "dependencies": {
+    "cli-color": "^2.0.4"
+  },
+  "devDependencies": {
+    "@types/cli-color": "^2.0.6"
+  }
+}
