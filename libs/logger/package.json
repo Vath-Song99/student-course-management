@@ -5,9 +5,11 @@
   "main": "index.ts",
   "license": "MIT",
   "dependencies": {
+    "winston": "^3.13.0",
     "cli-color": "^2.0.4"
   },
   "devDependencies": {
+    "@types/winston": "^2.4.4",
     "@types/cli-color": "^2.0.6"
   }
 }

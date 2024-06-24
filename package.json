@@ -1,14 +1,36 @@
 {
+  "author": "Smoeury Songvat",
   "name": "student-course-management",
   "private": "true",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "release": {"version": "01-07-2024"},
   "workspaces": [
     "apps/*",
     "libs/*"
   ],
   "scripts": {
-    "install": "yarn install --frozen-lockfile"
+    "build:docker": "docker compose build",
+    "start:docker": "docker compose up",
+    "stop:docker": "docker compose stop",
+    "build-up:docker": "docker compose up --build",
+    "restart:docker": "docker compose restart",
+    "rm:container": "docker container prune",
+    "start:api-gateway": "yarn workspace api-gateway start:dev",
+    "start:student-service": "yarn workspace student-service start:dev",
+    "start:course-service": "yarn workspace course-service start:dev",
+    "start:all": "concurrently \"yarn start:api-gateway\"   \"yarn start:student-service\" \"start:course-service\"",
+    "clean:node_modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "gen:course": "yarn workspace course-service gen:all",
+    "gen:student": "yarn workspace student-service gen:all",
+    "gen:all": "concurrently \"gen:course\" \"yarn gen:student\"",
+    "build:api-gateway": "yarn workspace api-gateway build",
+    "build:course-service": "yarn workspace course-service build",
+    "build:student-service": "yarn workspace student-service build",
+    "build:all-service": "concurrently \"yarn build:api-gateway\"  \"yarn build:student-service\" \"yarn build:course-service\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
  }
